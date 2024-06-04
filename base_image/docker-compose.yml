@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cdie-dashboard:
+    image: cdie_dash
+    ports:
+      - "3009:80" #Apache2 server port
+      - "3010:3306" #MySQL server port (not phpMyAdmin)
+    #volumes:
+      #- ./:/var/www/html # Import your project files
+    environment:
+      IMPORT_CUSTOM_DB: true
+      MYSQL_ADMIN_PASS: myadminpass
